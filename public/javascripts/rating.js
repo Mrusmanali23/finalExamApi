@@ -21,9 +21,9 @@ $(document).ready(function(){
     });
     
     
-    /* 2. Action to perform on click */
+  
     $('#stars li').on('click', function(){
-      var onStar = parseInt($(this).data('value'), 10); // The star currently selected
+      var onStar = parseInt($(this).data('value'), 10); 
       var stars = $(this).parent().children('li.star');
       
       for (i = 0; i < stars.length; i++) {
@@ -33,10 +33,8 @@ $(document).ready(function(){
       for (i = 0; i < onStar; i++) {
         $(stars[i]).addClass('selected');
       }
-      
-      // JUST RESPONSE (Not needed)
       var ratingValue = parseInt($('#stars li.selected').last().data('value'), 10);
-      var msg = "";
+      var msg = "Thanks! you rated this";
       if (ratingValue > 1) {
           msg = "Thanks! You rated this " + ratingValue + " stars.";
       }
@@ -52,6 +50,7 @@ $(document).ready(function(){
   
   
   function responseMessage(msg) {
-    $('.success-box').fadeIn(200);  
+   // $('.success-box').fadeIn(200);  
+  
     $('.success-box div.text-message').html("<span>" + msg + "</span>");
   }
