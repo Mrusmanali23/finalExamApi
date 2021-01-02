@@ -1,0 +1,49 @@
+extend ../layout
+
+ 
+   
+
+block content
+    .row
+        .col-sm-8
+             h1= Name
+        .col-sm-8
+                
+            a(href="/api/products/add", style="margin:2px" class="btn btn-success") Add Product
+                    
+             
+        
+            
+   
+
+    .container(class="")
+        .row( class="container"  style="margin:10px; padding:2ch;")
+            each product in products
+                    .card
+                        img(src=product.Image style="padding:5ch;")
+                        .card-block
+                        .card-body
+                        h4=product.Name
+                        p=product.price
+                        p=product.Details
+                        include ../parts/Rating.pug
+                        script
+                            include ../../public/javascripts/rating.js
+                        a(href="#", style="margin:2px" class="btn btn-success") Add to Cart
+                    
+                
+
+                        
+                        
+                            
+                            
+
+                    
+                       
+						
+						
+						
+						 
+						
+
+
